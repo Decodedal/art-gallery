@@ -8,6 +8,18 @@ function App() {
  let [artId, setArtId] = useState(100)
  let [data, setData] = useState({})
 
+const inputId = (input) =>{
+   
+       return setArtId(Number(input)) 
+  
+}
+
+ const random = (e) =>{
+  
+      return setArtId(Number(e.target.value)) 
+   
+ }
+
  const handleIterate = (e) => {
 
        return setArtId(artId + Number(e.target.value))
@@ -21,8 +33,8 @@ function App() {
  },[artId])
  return(
  <div>
-<Gallery objectImg={data.primaryImage} artist={data.artistDisplayName} title={data.title}/>
-<ButtonBar handleIterate={handleIterate}
+<Gallery objectImg={data.primaryImage} artist={data.artistDisplayName} title={data.title} id= {artId}/>
+<ButtonBar handleIterate={handleIterate} random = {random} inputId ={inputId}
 />
  </div>
  )
